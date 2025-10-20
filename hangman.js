@@ -9,10 +9,13 @@ function newGame() {
 
     var clueString = "";
 
-    for (var i; i < word.length; i++) {
+    for (var i = 0; i < word.length; i++) {
         clueString += "_ ";
     }
 
     var clue = document.getElementById("clue");
     clue.innerHTML = clueString;
+}
+function guess() {
+
 }
