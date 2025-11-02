@@ -24,6 +24,7 @@ function guessLetter() {
     guesses += letter;
 
     updatePage();
+    input.value = "";
 }
 
 function updatePage() {
@@ -51,5 +52,5 @@ function updatePage() {
     image.src = "images/hangman" + guess_count + ".gif";
 
 
-    
+    //show when you lose or win
 }
