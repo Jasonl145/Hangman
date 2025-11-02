@@ -1,5 +1,6 @@
 var POSSIBLE_WORDS = ["obdurate", "verisimilitude", "defenestrate", "obsequious", "dissonant", "toady", "idempotent"];
-
+// //test word list
+// var POSSIBLE_WORDS = ["cat"];
 var guess_count = MAX_GUESSES;
 var word = "";
 var guesses = "";
@@ -53,4 +54,11 @@ function updatePage() {
 
 
     //show when you lose or win
+    if (clueString.indexOf("_") < 0){
+        guessArea.innerHTML = "You Win!";
+    }
+    if (guess_count <= 0){
+        guessArea.innerHTML = "You Lose!";
+    }
+    
 }
