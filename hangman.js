@@ -19,10 +19,18 @@ function guessLetter() {
     var input = document.getElementById("guess");
     var letter = input.value;
     //condition return -1 if letter doesn't exist in word
-    if (word.indexOf(letter) < 0) {
+    //if character guessed is not in the word and was not guesses before
+    // add to hangman
+    if (word.indexOf(letter) < 0 && guesses.indexOf(letter) < 0) {
         guess_count--;
+        
     }
-    guesses += letter;
+    //if the character guessed was not guess before
+    //include in guessed list, don't add duplicates
+    if (guesses.indexOf(letter) < 0){
+        guesses += letter;
+    }
+    // guesses += letter;
 
     updatePage();
     input.value = "";
