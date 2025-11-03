@@ -7,8 +7,7 @@ var guesses = "";
 var MAX_GUESSES = 6;
 
 function newGame() {
-    //revert to default display style
-    inputArea.style.display = "";
+    
     var randomIndex = parseInt(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
 
@@ -20,6 +19,10 @@ function guessLetter() {
 
     var input = document.getElementById("guess");
     var letter = input.value;
+    if (word === ""){
+        input.value = "";
+        return;
+    }
     //condition return -1 if letter doesn't exist in word
     //if character guessed is not in the word and was not guesses before
     // add to hangman
@@ -67,11 +70,11 @@ function updatePage() {
     //show when you lose or win
     if (clueString.indexOf("_") < 0){
         guessArea.innerHTML = "You Win!";
-        inputArea.style.display = "none";
+        
     }
     if (guess_count <= 0){
         guessArea.innerHTML = "You Lose!";
-        inputArea.style.display = "none";
+        
     }
     
 }
