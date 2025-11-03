@@ -7,7 +7,9 @@ var guesses = "";
 var MAX_GUESSES = 6;
 
 function newGame() {
-    
+    //reable input box
+    document.getElementById("guess").disabled = false;
+
     var randomIndex = parseInt(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
 
@@ -65,16 +67,16 @@ function updatePage() {
     var image = document.getElementById("hangmanImage");
     image.src = "images/hangman" + guess_count + ".gif";
 
-    //input area
-    var inputArea = document.getElementById("inputArea");
+    //input box
+    var input = document.getElementById("guess");
     //show when you lose or win
     if (clueString.indexOf("_") < 0){
         guessArea.innerHTML = "You Win!";
-        
+        input.disabled = true;
     }
     if (guess_count <= 0){
         guessArea.innerHTML = "You Lose!";
-        
+        input.disabled = true;
     }
     
 }
